@@ -2,7 +2,7 @@ class EmployeesController < ApplicationController
 
   def fire
     @employee=Employee.find(params[:id])
-    @employee[:end_date]=Time.now
+    @employee[:end_date]=Date.today
     @employee.save
     redirect_to action: "list"
   end
@@ -19,7 +19,7 @@ class EmployeesController < ApplicationController
     @employee=Employee.new
     @employee[:name]=params[:name]
     @employee[:position]=params[:position]
-    @employee[:start_date]=Time.now
+    @employee[:start_date]=Date.today
 
     @employee.save
     redirect_to action: "new_employee"
