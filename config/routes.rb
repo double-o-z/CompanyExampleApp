@@ -1,5 +1,6 @@
 Company::Application.routes.draw do
 
+root to: 'home#home'
 
 get '/employees/new_employee' => 'employees#new_employee'
 post '/employees/new_employee' => 'employees#new_employee'
