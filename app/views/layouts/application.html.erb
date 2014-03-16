@@ -1,10 +1,37 @@
+
 <!DOCTYPE html>
-<html>
+<html {min-height:100%}>
 <head>
   <title>Company</title>
   <%= stylesheet_link_tag    "bootstrap", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "bootstrap", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+
+    <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Company-Home</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav nav-tabs">
+            <li><a href="/employees/list">Employees-List</a></li>
+            <li><a href="/employees/new_employee">Employees-New</a></li>
+            <li><a href="/positions/list">Positions-List</a></li>
+            <li><a href="/positions/new_position">Positions-New</a></li>
+            <li><a href="/calcs/total">Calcs-Total</a></li>
+            <li><a href="/calcs/month">Calcs-Month</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+
 </head>
 <body>
 <%= yield %>
