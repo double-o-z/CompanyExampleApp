@@ -46,3 +46,5 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+gem 'unicorn'
+ruby "2.1.1"
