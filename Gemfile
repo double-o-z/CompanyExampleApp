@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'rails_12factor', group: :production
+
 gem 'bootstrap-sass', '~> 3.1.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
