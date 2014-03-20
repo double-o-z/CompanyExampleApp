@@ -5,6 +5,7 @@
   <title>Company</title>
   <%= stylesheet_link_tag    "bootstrap", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "bootstrap", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "alert", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 
     <div class="navbar navbar-inverse navbar-static-top" role="navigation">
@@ -35,7 +36,8 @@
 </head>
 <body>
 <%= yield %>
-<input type="button" onclick="alert('Hello!');" value="Click me" />
+<button onclick="Alert()">Try it!</button>
+<script src="alert.js"></script>
 </body>
 </html>
 

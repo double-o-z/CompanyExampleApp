@@ -1,0 +1,5 @@
+function Alert()
+{
+alert('Hello!')
+}
+
