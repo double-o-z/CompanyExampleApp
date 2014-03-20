@@ -2,7 +2,7 @@
 
 <h1>Listing Employees</h1>
 <% @employees=Employee.all %>
-<table>
+<table class="table">
   <tr>
     <th>Id</th>
     <th>Name</th>
@@ -10,14 +10,15 @@
     <th>Start Date</th>
     <th>Action</th> 
   </tr>
-
+<% @positions=Position.all %>
 <% @employees.each do |e| %>
   <tr>
   <% if e[:end_date] == nil %>
   <% @e=e[:id] %>
+  <% @p=Position.find(e[:position]) %>
     <td><%= e[:id] %></td>
     <td><%= e[:name] %></td>
-    <td><%= e[:position] %></td>
+    <td><%= @p[:desc] %></td>
     <td><%= e[:start_date] %></td>
     <td><%= link_to "Fire", controller: "employees", action: "fire", id: e[:id] %>
   <% end %>
