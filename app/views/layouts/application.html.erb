@@ -4,9 +4,8 @@
 <head>
   <title>Company</title>
   <%= stylesheet_link_tag    "bootstrap", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "jquery", "alert", "bootstrap", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "jquery", "highcharts", "alert", "bar_chart1", "bootstrap", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
-
     <div class="navbar navbar-inverse navbar-static-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
@@ -26,6 +25,8 @@
             <li><a href="/positions/new_position">Positions-New</a></li>
             <li><a href="/calcs/total">Calcs-Total</a></li>
             <li><a href="/calcs/month">Calcs-Month</a></li>
+            <li><a href="/calcs/chart">Calcs-Chart</a></li>
+            
           </ul>
         </div><!--/.nav-collapse -->
       </div>

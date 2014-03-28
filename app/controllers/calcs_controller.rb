@@ -1,4 +1,5 @@
 class CalcsController < ApplicationController
+
   def month
     @join=0
     @join=Employee.joins("INNER JOIN positions ON positions.id = employees.position").select(:salary).where(end_date: nil).sum {|p| p[:salary]}
@@ -13,4 +14,15 @@ class CalcsController < ApplicationController
     @sum3
     render "total"
   end
+
+  def chart
+    render "chart"
+  end
+
+  def month_chart
+    # this method will have a loop to check in each month (from min-date to max-date ?) how the amount of salary (calculated via month method?? ) 
+    @sum4=0
+    @sum4=Employee.joins("INNER JOIN positions ON positions.id = employees.position").select(:salary, :start_date, :end_date).where(end_date: nil).sum {|p| p[:salary] }
+  end
+
 end 

@@ -1,0 +1,27 @@
+$(document).ready(function() {
+$(function () { 
+    $('#container').highcharts({
+        chart: {
+        },
+        title: {
+            text: 'Salary Expenses by Months'
+        },
+        xAxis: {
+	    title: {
+		text: 'Month'
+	    },
+            type: 'datetime'
+        },
+        yAxis: {
+            title: {
+                text: 'Thousands of Dollars'
+            }
+        },
+        series: [{
+	    pointInterval: <%= 1.month * 1000 %>,
+	    pointStart: <%= Employee.select(:start_date).to_i * 1000 %>,
+	    data: [1, 2, 3, 5]
+        }]
+    });
+});
+});

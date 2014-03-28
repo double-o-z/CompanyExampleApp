@@ -16,3 +16,6 @@
 //= require_tree .
 // Loads all Bootstrap javascripts
 //= require bootstrap
+//= require highcharts
+//= require highcharts/highcharts-more
+
