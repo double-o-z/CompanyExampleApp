@@ -18,4 +18,5 @@
 //= require bootstrap
 //= require highcharts
 //= require highcharts/highcharts-more
-
+//= require /alert
+//= require /bar-chart1
