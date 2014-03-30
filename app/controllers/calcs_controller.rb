@@ -1,9 +1,12 @@
 class CalcsController < ApplicationController
 
+
+
   def month
-    @join=0
-    @join=Employee.joins("INNER JOIN positions ON positions.id = employees.position").select(:salary).where(end_date: nil).sum {|p| p[:salary]}
-  render "month"
+    @date=Date.new(2013,05,01)
+    $join=0
+    $join=Employee.joins("INNER JOIN positions ON positions.id = employees.position").select(:salary).where(end_date: nil).sum {|p| p[:salary]}
+    render "month"
   end
 
   def total
@@ -16,13 +19,25 @@ class CalcsController < ApplicationController
   end
 
   def chart
+    sql = "SELECT datee, SUM(salary) from (SELECT DATE_FORMAT(start_date, '%Y-%m-01 00:00:00') as datee from employees join positions WHERE employees.position = positions.id GROUP BY DATE_FORMAT(start_date, '%Y-%m-01 00:00:00')) all_dates join employees join positions WHERE start_date <= datee AND (end_date is null OR end_date >= datee + interval 1 month) AND employees.position = positions.id GROUP BY datee"
+    results = ActiveRecord::Base.connection.execute(sql)
+    gon.chart_data = results
     render "chart"
   end
 
-  def month_chart
-    # this method will have a loop to check in each month (from min-date to max-date ?) how the amount of salary (calculated via month method?? ) 
-    @sum4=0
-    @sum4=Employee.joins("INNER JOIN positions ON positions.id = employees.position").select(:salary, :start_date, :end_date).where(end_date: nil).sum {|p| p[:salary] }
-  end
 
 end 
+
+
+
+# this goes into the data hash of Salary series of the chart... good luck with that :/
+=begin
+
+for i in Date.new(2012,02,01)..Date.today do
+  @a=Calc.new(i)
+  @a.current
+end
+
+=end
+
+  
