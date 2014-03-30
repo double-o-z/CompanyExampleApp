@@ -19,9 +19,11 @@ class CalcsController < ApplicationController
   end
 
   def chart
-    sql = "SELECT datee, SUM(salary) from (SELECT DATE_FORMAT(start_date, '%Y-%m-01 00:00:00') as datee from employees join positions WHERE employees.position = positions.id GROUP BY DATE_FORMAT(start_date, '%Y-%m-01 00:00:00')) all_dates join employees join positions WHERE start_date <= datee AND (end_date is null OR end_date >= datee + interval 1 month) AND employees.position = positions.id GROUP BY datee"
+    sql = "SELECT datee, SUM(salary) from (SELECT DATE_FORMAT(start_date, '%Y-%m-01 03:00:00') as datee from employees join positions WHERE employees.position = positions.id GROUP BY DATE_FORMAT(start_date, '%Y-%m-01 03:00:00')) all_dates join employees join positions WHERE start_date <= datee AND (end_date is null OR end_date >= datee + interval 1 month) AND employees.position = positions.id GROUP BY datee"
     results = ActiveRecord::Base.connection.execute(sql)
+    results.map {|row| row[0]=Time.parse(row[0]).utc.to_i*1000 }
     gon.chart_data = results
+    gon.point_start = results.first.first
     render "chart"
   end
 

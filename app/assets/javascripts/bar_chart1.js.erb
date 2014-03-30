@@ -1,31 +1,33 @@
 $(document).ready(function() {
 $(function () { 
     $('#container').highcharts({
+        chart: {
+            backgroundColor: '#FCFFC5',
+            borderColor: '#EBBA95',
+            borderWidth: 2,
+            type: 'line'
+        },
         title: {
             text: 'Salary Expenses by Months'
         },
         xAxis: {
             type: 'datetime',
             dateTimeLabelFormats: {
-                millisecond: '%H:%M:%S.%L',
-	second: '%H:%M:%S',
-	minute: '%H:%M',
-	hour: '%H:%M',
-	day: '%e. %b',
-	week: '%e. %b',
-	month: '%b \'%y'
-            }
+	week: '%b %y'
+            },
+            gridLineWidth: 2
         },
         yAxis: {
             title: {
                 text: 'Thousands of Dollars'
-            }
+            },
+            gridLineWidth: 2
         },
         series: [{
             name: 'Salary',
 	    data: gon.chart_data,
-	    pointInterval: 1000*3600*24*30,
-            pointStart: Date.UTC(2012, 2, 0)
+	    pointInterval: <%= 1.month * 1000 %>,
+            pointStart: gon.point_start
         }]
     });
 });
