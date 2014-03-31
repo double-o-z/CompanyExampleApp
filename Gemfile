@@ -6,7 +6,6 @@ gem 'bootstrap-sass', '~> 3.1.1'
 gem 'rails', '4.0.2'
 
 gem 'gon', '3.0.5'
-gem "highcharts-rails", "~> 3.0.0"
 # The gem version mirrors the included version of Highcharts
 
 # Use SCSS for stylesheets
