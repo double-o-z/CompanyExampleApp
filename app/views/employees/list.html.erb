@@ -16,13 +16,15 @@
     <th>Start Date (Year-Month-Day)</th>
     <th>Action</th> 
   </tr>
+<% i=0 %>
 <% @positions=Position.all %>
 <% @employees.each do |e| %>
   <tr>
   <% if e[:end_date] == nil %>
+  <% i+=1 %>
   <% @e=e[:id] %>
   <% @p=Position.find(e[:position]) %>
-    <td><%= e[:id] %></td>
+    <td><%= i %></td>
     <td><%= e[:name] %></td>
     <td><%= @p[:desc] %></td>
     <td><%= e[:start_date] %></td>
