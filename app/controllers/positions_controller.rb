@@ -13,6 +13,7 @@ class PositionsController < ApplicationController
     @position[:desc]=params[:desc]
     @position[:salary]=params[:salary]
     @position.save
+    flash[:notice] = "Position was added successfully!"
     redirect_to action: "new_position"
   end
 

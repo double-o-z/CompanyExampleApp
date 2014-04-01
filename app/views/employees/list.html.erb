@@ -1,7 +1,13 @@
 
 
 <h1>Listing Employees</h1></br>
-<% @employees=Employee.all %>
+<% @employees=Employee.all %></br>
+<% if flash[:notice] -%>
+<div class="alert alert-info" style="width:30%">
+  <strong>Done.</strong> <%= flash[:notice] %>
+</div>
+<% end %>
+
 <table class="table table-hover table-bordered table-condensed table-responsive">
   <tr>
     <th>Id</th>

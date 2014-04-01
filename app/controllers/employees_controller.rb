@@ -4,6 +4,7 @@ class EmployeesController < ApplicationController
     @employee=Employee.find(params[:id])
     @employee[:end_date]=Date.today
     @employee.save
+    flash[:notice] = "Employee was fired from the company successfully."
     redirect_to action: "list"
   end
 
@@ -15,12 +16,13 @@ class EmployeesController < ApplicationController
     render "new_employee"
   end
 
-  def insert
+  def insert 
     @employee=Employee.new
     @employee[:name]=params[:name]
     @employee[:position]=params[:position]
     @employee[:start_date]=Date.today
     @employee.save
+    flash[:notice] = "Employee was added successfully!"	
     redirect_to action: "new_employee"
   end
 

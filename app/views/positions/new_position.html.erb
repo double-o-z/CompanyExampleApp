@@ -1,6 +1,11 @@
 
 <h1> Position </h1><br/>
 <p class="lead">Enter new position information below</p><br/>
+<% if flash[:notice] -%>
+<div class="alert alert-success" style="width:20%">
+  <strong>Great!</strong> <%= flash[:notice] %>
+</div>
+<% end %>
 
 <%= form_tag('/positions/insert', class: "form-inline") do -%>
   <%= text_field_tag "desc", nil, placeholder: 'Job description', class: "form-group form-control" %>
