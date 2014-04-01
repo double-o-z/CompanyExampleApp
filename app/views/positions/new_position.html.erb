@@ -1,15 +1,11 @@
 
 <h1> Position </h1><br/>
-<h3>Enter new position information below</h3><br/><br/>
+<p class="lead">Enter new position information below</p><br/>
 
-<%= form_tag('/positions/insert') do -%>
-  <div class="input-group">
-  <input type="text", name="desc", value="" class="form-control", placeholder="Description of position">
-  </div>
-  <div class="input-group">
-  <input type="text", name="salary", value="" class="form-control", placeholder="Salary, in K$">
-  </div> 
-  <%= submit_tag 'Add' %>
+<%= form_tag('/positions/insert', class: "form-inline") do -%>
+  <%= text_field_tag "desc", nil, placeholder: 'Job description', class: "form-group form-control" %>
+  <%= text_field_tag "salary", nil, placeholder: 'Monthly salary', class: "form-group form-control" %>
+  <%= submit_tag 'Submit', class: "btn btn-default" %>
 <% end -%>
 
 

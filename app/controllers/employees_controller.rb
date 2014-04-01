@@ -20,7 +20,6 @@ class EmployeesController < ApplicationController
     @employee[:name]=params[:name]
     @employee[:position]=params[:position]
     @employee[:start_date]=Date.today
-
     @employee.save
     redirect_to action: "new_employee"
   end

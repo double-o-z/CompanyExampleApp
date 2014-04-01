@@ -5,8 +5,12 @@
   <title>Company</title>
   <%= include_gon %>
   <%= stylesheet_link_tag    "bootstrap", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "jquery", "/alert", "bootstrap", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "jquery", "bootstrap", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+
+
+
+
     <div class="navbar navbar-inverse navbar-static-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
@@ -20,14 +24,25 @@
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav nav-tabs">
-            <li><a href="/employees/list">Employees-List</a></li>
-            <li><a href="/employees/new_employee">Employees-New</a></li>
-            <li><a href="/positions/list">Positions-List</a></li>
-            <li><a href="/positions/new_position">Positions-New</a></li>
-            <li><a href="/calcs/total">Calcs-Total</a></li>
-            <li><a href="/calcs/month">Calcs-Month</a></li>
-            <li><a href="/calcs/chart">Calcs-Chart</a></li>
-            
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Employees<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="/employees/new_employee">New Employee</a></li> 
+                <li><a href="/employees/list">List of Employees</a></li>
+              </ul><!--closing dropdown menu-->
+            </li>
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Positions<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="/positions/new_position">New Position</a></li>
+                <li><a href="/positions/list">List of Positions</a></li>
+              </ul>
+            </li>
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Salary Expenses<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="/calcs/total">Total</a></li>
+                <li><a href="/calcs/month">This Month</a></li>
+                <li><a href="/calcs/chart">All Months Chart</a></li>
+              </ul>
+            </li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -35,7 +50,32 @@
 </head>
 <body>
 <%= yield %>
-<button id="boom">Try it!</button>
+</br></br></br></br></br></br></br>
+<button class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Example for Bootstrap JS and CSS components</button>
+
+<div class="container">
+  <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <h3>This is used for headlines </h3></br></br>
+        <p>Buttons</p></br>
+        <span class="label label-default">Default</span>
+        <span class="label label-primary">Primary</span>
+        <span class="label label-success">Success</span>
+        <span class="label label-info">Info</span>
+        <span class="label label-warning">Warning</span>
+        <span class="label label-danger">Danger</span></br></br></br>
+        <p>Alerts</p></br>
+        <div class="alert alert-success">This is a success alert</div>
+        <div class="alert alert-info">This is an info alert</div>
+        <div class="alert alert-warning">This is a warning alert</div>
+        <div class="alert alert-danger">This is a danger alert</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 </body>
 </html>
 

@@ -1,8 +1,8 @@
 
 
-<h1>Listing Positions</h1>
+<h1>Listing Positions</h1></br>
 <% @positions=Position.all %>
-<table class="table">
+<table class="table table-hover table-bordered table-condensed table-responsive">
   <tr>
     <th>Id</th>
     <th>Description</th>
@@ -13,7 +13,7 @@
   <tr>
     <td><%= p[:id] %></td>
     <td><%= p[:desc] %></td>
-    <td><%= p[:salary] %></td>
+    <td><%= " #{p[:salary]},000 $ / Month" %></td>
   </tr>
 <% end %>
 </table>

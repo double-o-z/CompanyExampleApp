@@ -27,15 +27,12 @@ body {
   font-family: $font-family-base;
   font-size: $font-size-base;
   line-height: $line-height-base;
-  color: $text-color;
-  background: #c4dde6;
-background: -moz-linear-gradient(left, #c4dde6 0%, #c4dde6 11%, #3d858c 79%, #136a70 100%);
-background: -webkit-gradient(left top, right top, color-stop(0%, #c4dde6), color-stop(11%, #c4dde6), color-stop(79%, #3d858c), color-stop(100%, #136a70));
-background: -webkit-linear-gradient(left, #c4dde6 0%, #c4dde6 11%, #3d858c 79%, #136a70 100%);
-background: -o-linear-gradient(left, #c4dde6 0%, #c4dde6 11%, #3d858c 79%, #136a70 100%);
-background: -ms-linear-gradient(left, #c4dde6 0%, #c4dde6 11%, #3d858c 79%, #136a70 100%);
-background: linear-gradient(to right, #c4dde6 0%, #c4dde6 11%, #3d858c 79%, #136a70 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c4dde6', endColorstr='#136a70', GradientType=1 );
+  color: dark-gray;
+  background: url(/weird_blue.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 // Reset fonts for relevant elements

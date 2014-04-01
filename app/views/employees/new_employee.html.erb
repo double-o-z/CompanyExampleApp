@@ -1,19 +1,14 @@
 
 
 <h1> Employee </h1><br/>
-<h3>Enter new employee information below</h3><br/><br/>
+<p class="lead">Enter new employee information below</p></br>
 
 <% @position=Position.all %>
 
-
-
-<%= form_tag('/employees/insert') do -%>
-  <div class="input-group">
-  <input type="text", name="name", value="" class="form-control", placeholder="Employee's Name">
-  </div>
-  <%= select_tag "position", options_from_collection_for_select(@position, "id", "desc") %><br/><br/>
-  <%= submit_tag 'Add' %>
+<%= form_tag('/employees/insert', class: "form-inline") do -%>
+  <%= text_field_tag "name", nil, placeholder: 'Enter name', class: "form-group form-control" %>
+  <%= select_tag "position", options_from_collection_for_select(@position, "id", "desc"), prompt: "Select position", class: "form-group form-control" %>
+  <%= submit_tag 'Submit', class: "btn btn-default" %>
 <% end -%>
 
 
- 
