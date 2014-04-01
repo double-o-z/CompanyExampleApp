@@ -21,6 +21,8 @@ get '/employees/fire' => 'employees#fire'
 get '/calcs/total' => 'calcs#total'
 get '/calcs/month' => 'calcs#month'
 get '/calcs/chart' => 'calcs#chart'
+get '/calcs/fields' => 'calcs#fields'
+
 
 
 
