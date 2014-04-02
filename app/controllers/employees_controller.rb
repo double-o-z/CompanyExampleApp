@@ -25,7 +25,5 @@ class EmployeesController < ApplicationController
     flash[:notice] = "Employee was added successfully!"	
     redirect_to action: "new_employee"
   end
-
-
 end
 

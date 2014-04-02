@@ -6,8 +6,9 @@ $(function () {
             text: 'Salary Expenses by Months'
         },
         xAxis: {
-            type: 'datetime'
-        },
+            type: 'datetime',
+	    minTickInterval: 1000*3600*24*30
+            },
         tooltip: {
             valuePrefix: '$',
             valueSuffix: ',000 USD',
