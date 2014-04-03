@@ -1,6 +1,8 @@
+ruby '2.1.0'
 source 'https://rubygems.org'
 gem 'rails_12factor'
 gem 'bootstrap-sass', '~> 3.1.1'
+
 
 
 gem 'rest-client', '~> 1.6.7'
@@ -49,3 +51,5 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+
