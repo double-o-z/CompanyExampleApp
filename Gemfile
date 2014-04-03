@@ -1,6 +1,6 @@
 ruby '2.1.0'
 source 'https://rubygems.org'
-gem 'rails_12factor'
+gem 'rails_12factor', group: :test
 gem 'bootstrap-sass', '~> 3.1.1'
 
 
