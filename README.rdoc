@@ -1,28 +1,29 @@
-== README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Hello.
+Welcome to the ==Company== site.
+here you can manage your most valuabe resource!
+the Human Resource!
+Lets see what you can do with this application:
+1. Positions: 
+	1.1 Create different jobs as your company will need, and also enter the price of each job.
+	1.2 List the different positions already existing, and see athe salary given to each.
+2. Employees:
+	2.1 Create new employees, as you hire them to your successful company. Dont forget to mention what is their job exactly.
+	2.2 Manage your creative and determined employees.
+		2.2.1 List them to see when you have exactly hired them, and what is their job description.
+		2.2.2 Manage you company by firing employees, but why would you do that? 
+3. Calcs:
+	3.1 Calculate the humble expenses your company will make to pay your lovely employees, since its creation.
+	3.2 Also calculate the expenses for this paticular month.
+	3.3 Furthermore, see how the expenses on salary vary, as beatifully presented in the Salary chart (salary by month).
+4. HR: Manage how many employees there are in any field, as of today. This way you can see that you have to many managers and to few developers, dont you?
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Have fun, and remember:
+Never press the fire button, unless you really have to. And then, by all means, push that red (blue) button !
+
+
+The ==Company== site was built by Or Ohev-Zion.
+or.ohev.zion@gmail.com
+
+Keep it real.
+	
