@@ -1,5 +1,8 @@
 require 'rest_client'
-def main
+require 'json'
 
-RestClient.post "http://0.0.0.0:3000/add_db", { desc: 'QA assistant', salary: 6 }.to_json
-end 
+aaa = {desc: "Photographer", salary: 13}
+url = "http://0.0.0.0:3000/add_db"
+
+# RestClient.post url, aaa.to_json, :content_type => :json, :accept => :json
+RestClient.post url, aaa
