@@ -1,4 +1,3 @@
-ruby '2.1.0'
 source 'https://rubygems.org'
 gem 'rails_12factor', group: :test
 gem 'bootstrap-sass', '~> 3.1.1'
@@ -32,7 +31,7 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
-group :production, :test do
+group :test do
   gem 'mysql2', '0.3.15'
 end
 group :doc do
