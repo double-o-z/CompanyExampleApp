@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 gem 'rails_12factor'
 gem 'bootstrap-sass', '~> 3.1.1'
-
+ruby '2.1.1'
 
 
 gem 'rest-client', '~> 1.6.7'
