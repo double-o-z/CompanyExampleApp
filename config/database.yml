@@ -9,8 +9,8 @@ development:
 
 production:
   adapter: mysql2
-  host: ohev-zion.cx8usb91m0zi.eu-west-1.rds.amazonaws.com:3306/the_company?sslca=config/amazon-rds-ca-cert.pem
+  host: ohev-zion.cx8usb91m0zi.eu-west-1.rds.amazonaws.com
   reconnect: false
   database: the_company
   username: master
-  password: orissupergay
+  password: orisking16
