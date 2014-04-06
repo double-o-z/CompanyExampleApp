@@ -1,5 +1,5 @@
 production:
-  adapter: mysql2
+  adapter: mysql2 # here goes the amazaon RDS properties.
   encoding: utf8
   database: New_Company
   pool: 5
@@ -16,7 +16,7 @@ development:
   password: 
   socket: /var/run/mysqld/mysqld.sock
 
-test:
+test: # also here, if you want...
   adapter: mysql2
   host: ohev-zion.cx8usb91m0zi.eu-west-1.rds.amazonaws.com
   reconnect: false
