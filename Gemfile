@@ -1,3 +1,5 @@
+configure :development, :test, :production do
+
 source 'https://rubygems.org'
 gem 'rails_12factor'
 gem 'bootstrap-sass', '~> 3.1.1'
@@ -32,6 +34,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 gem 'mysql2', '0.3.15'
+
+end
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
