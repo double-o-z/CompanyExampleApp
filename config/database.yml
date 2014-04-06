@@ -1,12 +1,10 @@
-test:
-  adapter: mysql2
-  encoding: utf8
-  database: New_Company
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: the_company_db
   pool: 5
-  username: root
-  password: 
-  socket: /var/run/mysqld/mysqld.sock
-
+  username: master
+  password: master
 
 development:
   adapter: mysql2
@@ -17,7 +15,7 @@ development:
   password: 
   socket: /var/run/mysqld/mysqld.sock
 
-production:
+test:
   adapter: mysql2
   host: ohev-zion.cx8usb91m0zi.eu-west-1.rds.amazonaws.com
   reconnect: false
