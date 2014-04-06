@@ -1,11 +1,11 @@
 production:
-  adapter: postgresql
-  encoding: unicode
-  host: localhost
-  database: the_company_db
+  adapter: mysql2
+  encoding: utf8
+  database: New_Company
   pool: 5
-  username: master
-  password: master
+  username: root
+  password: 
+  socket: /var/run/mysqld/mysqld.sock
 
 development:
   adapter: mysql2
