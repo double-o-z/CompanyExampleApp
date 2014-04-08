@@ -23,21 +23,25 @@ class PositionsController < ApplicationController
     @e=params[:employees]
     @count_positions,@count_employees=0,0
     @p.each do |p|
-      @position=Position.new
-      @position[:desc]=p[:desc]
-      @position[:salary]=p[:salary]
-      @position.save
-      @count_positions+=1
+      unless Position.all.exists?(desc: "#{p[:desc]}") then
+        @position=Position.new
+        @position[:desc]=p[:desc]
+        @position[:salary]=p[:salary]
+        @position.save
+        @count_positions+=1
+      end
     end
     @e.each do |e|
-      @employee=Employee.new
-      @employee[:name]=e[:name]
-      position_id=Position.find_by_desc("#{e[:position]}")
-      @employee[:position]=position_id[:id]
-      @employee[:start_date]=e[:start_date]
-      @employee[:end_date]=e[:end_date]
-      @employee.save
-      @count_employees+=1
+      unless Employee.all.exists?(name: "#{e[:name]}") then
+        @employee=Employee.new
+        @employee[:name]=e[:name]
+        position_id=Position.find_by_desc("#{e[:position]}")
+        @employee[:position]=position_id[:id]
+        @employee[:start_date]=e[:start_date]
+        @employee[:end_date]=e[:end_date]
+        @employee.save
+        @count_employees+=1
+      end
     end
     
     #@p=JSON.parse(params["positions"])
@@ -61,8 +65,7 @@ class PositionsController < ApplicationController
     puts "Success. Added #{@count_positions} Positions, and #{@count_employees} Employees to Database."
     render nothing: true
   end
-
-
+ 
 end
 
 
