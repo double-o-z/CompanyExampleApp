@@ -18,14 +18,48 @@ class PositionsController < ApplicationController
   end
 
 
-  def add_db
-      # puts params
+  def insert_site_db
+    @p=params[:positions]
+    @e=params[:employees]
+    @count_positions,@count_employees=0,0
+    @p.each do |p|
       @position=Position.new
-      @position[:desc]=params[:desc]
-      @position[:salary]=params[:salary]
+      @position[:desc]=p[:desc]
+      @position[:salary]=p[:salary]
       @position.save
-    puts "Success"
-    render text: "Success"
+      @count_positions+=1
+    end
+    @e.each do |e|
+      @employee=Employee.new
+      @employee[:name]=e[:name]
+      position_id=Position.find_by_desc("#{e[:position]}")
+      @employee[:position]=position_id[:id]
+      @employee[:start_date]=e[:start_date]
+      @employee[:end_date]=e[:end_date]
+      @employee.save
+      @count_employees+=1
+    end
+    
+    #@p=JSON.parse(params["positions"])
+    #@e=JSON.parse(params["employees"])
+    #puts @p
+    #puts @e
+    #@p.each do |p|
+     # @position=Position.new
+     # @position[:desc]=p[count]["desc"]
+     # @position[:salary]=p[count]["salary"]
+     # @position.save
+    #end
+    #@e.each do |e|
+     # @position=Employee.new
+     # @employee[:name]=e[count]["name"]
+     # @employee[:position]=e[count]["position"]
+     # @employee[:start_date]=e[count]["start_date"]
+     # @employee[:end_date]=e[count]["end_date"]
+     # @employee.save
+    #end
+    puts "Success. Added #{@count_positions} Positions, and #{@count_employees} Employees to Database."
+    render nothing: true
   end
 
 

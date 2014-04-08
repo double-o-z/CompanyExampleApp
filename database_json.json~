@@ -1,0 +1,140 @@
+{
+    "positions": [
+        {
+            "desc": "CEO",
+            "salary": "55"
+        },
+        {
+            "desc": "CTO",
+            "salary": "45"
+        },
+        {
+            "desc": "Senior Manager",
+            "salary": "35"
+        },
+        {
+            "desc": "Junior Manager",
+            "salary": "30"
+        },
+        {
+            "desc": "Senior Developer",
+            "salary": "30"
+        },
+        {
+            "desc": "Junior Developer",
+            "salary": "20"
+        },
+        {
+            "desc": "Head Secretary",
+            "salary": "20"
+        },
+        {
+            "desc": "Junior Secretary",
+            "salary": "10"
+        },
+        {
+            "desc": "Maintenance man",
+            "salary": "5"
+        },
+        {
+            "desc": "Senior Finance",
+            "salary": "30"
+        },
+        {
+            "desc": "Junior Finance",
+            "salary": "15"
+        },
+        {
+            "desc": "Senior QA",
+            "salary": "20"
+        },
+        {
+            "desc": "Junior QA",
+            "salary": "10"
+        },
+        {
+            "desc": "Assistant QA",
+            "salary": "5"
+        }
+    ],
+    "employees": [
+        {
+            "name": "John",
+            "position": "CEO",
+            "start_date": "2012-03-01",
+            "end_date": "null"
+        },
+        {
+            "name": "David",
+            "position": "CTO",
+            "start_date": "2012-03-01",
+            "end_date": "null"
+        },
+        {
+            "name": "Malisa",
+            "position": "Head Secretary",
+            "start_date": "2012-03-01",
+            "end_date": "2013-03-01"
+        },
+        {
+            "name": "Kyle",
+            "position": "Senior Developer",
+            "start_date": "2012-03-15",
+            "end_date": "2013-01-02"
+        },
+        {
+            "name": "Kristin",
+            "position": "Senior Finance",
+            "start_date": "2012-04-05",
+            "end_date": "null"
+        },
+        {
+            "name": "Ben",
+            "position": "Senior QA",
+            "start_date": "2012-04-10",
+            "end_date": "2013-02-09"
+        },
+        {
+            "name": "Ted",
+            "position": "Junior Secretary",
+            "start_date": "2012-05-21",
+            "end_date": "2012-07-11"
+        },
+        {
+            "name": "Sammy",
+            "position": "Assistant QA",
+            "start_date": "2012-06-17",
+            "end_date": "2012-09-03"
+        },
+        {
+            "name": "Louis",
+            "position": "Junior Finanace",
+            "start_date": "2012-07-23",
+            "end_date": "2013-05-08"
+        },
+        {
+            "name": "Cheryl",
+            "position": "Junior Developer",
+            "start_date": "2012-09-02",
+            "end_date": "null"
+        },
+        {
+            "name": "Leroy",
+            "position": "Maintenance man",
+            "start_date": "2012-04-12",
+            "end_date": "null"
+        },
+        {
+            "name": "Arnold",
+            "position": "Junior Secretary",
+            "start_date": "2012-07-15",
+            "end_date": "null"
+        },
+        {
+            "name": "Joshua",
+            "position": "Junior Manager",
+            "start_date": "2012-08-11",
+            "end_date": "null"
+        }
+    ]
+}
