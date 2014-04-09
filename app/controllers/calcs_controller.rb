@@ -27,7 +27,7 @@ class CalcsController < ApplicationController
     render "chart"
   end
   def fields
-    sql = "select SUM(position between 128 and 131) as managers, SUM(position between 132 and 133) as developers, SUM(position between 134 and 136) as administration, SUM(position between 137 and 138) as finance, SUM(position between 139 and 141) as qa from employees join positions where employees.position = positions.id and end_date is null;"
+    sql = "select SUM(position between 1 and 4) as managers, SUM(position between 5 and 6) as developers, SUM(position between 7 and 9) as administration, SUM(position between 10 and 11) as finance, SUM(position between 12 and 14) as qa from employees join positions where employees.position = positions.id and end_date is null;"
     results = ActiveRecord::Base.connection.execute(sql)
     gon.data = results.first
     render "fields"

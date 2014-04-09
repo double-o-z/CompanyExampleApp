@@ -1,5 +1,12 @@
-production:
-  adapter: mysql2 # here goes the amazaon RDS properties.
+production: # This is the Amazon RDS instance db.
+  adapter: mysql2 
+  database: the_company
+  host: or-ohev-zion.cwqkw32fyhbb.eu-west-1.rds.amazonaws.com
+  username: master
+  password: v676fzxG
+
+development: # This is the mysql db via mysql-workbench located locally on my computer..
+  adapter: mysql2   
   encoding: utf8
   database: New_Company
   pool: 5
@@ -7,19 +14,10 @@ production:
   password: 
   socket: /var/run/mysqld/mysqld.sock
 
-development:
+test: # This is the Amazon RDS instance db.
   adapter: mysql2
-  encoding: utf8
-  database: New_Company
-  pool: 5
-  username: root
-  password: 
-  socket: /var/run/mysqld/mysqld.sock
-
-test: # also here, if you want...
-  adapter: mysql2
-  host: ohev-zion.cx8usb91m0zi.eu-west-1.rds.amazonaws.com
+  host: 
   reconnect: false
   database: the_company
   username: master
-  password: orisking16
+  password: v676fzxG
