@@ -9,6 +9,7 @@ get '/employees/insert' => 'employees#insert'
 post '/employees/insert' => 'employees#insert'
 
 post '/insert_site_db' => 'positions#insert_site_db'
+get '/user_insert_db' => 'positions#user_insert_db'
 get '/positions/new_position' => 'positions#new_position'
 post '/positions/new_position' => 'positions#new_position'
 get '/positions/insert' => 'positions#insert'

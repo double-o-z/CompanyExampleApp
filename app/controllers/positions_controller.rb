@@ -43,29 +43,16 @@ class PositionsController < ApplicationController
         @count_employees+=1
       end
     end
-    
-    #@p=JSON.parse(params["positions"])
-    #@e=JSON.parse(params["employees"])
-    #puts @p
-    #puts @e
-    #@p.each do |p|
-     # @position=Position.new
-     # @position[:desc]=p[count]["desc"]
-     # @position[:salary]=p[count]["salary"]
-     # @position.save
-    #end
-    #@e.each do |e|
-     # @position=Employee.new
-     # @employee[:name]=e[count]["name"]
-     # @employee[:position]=e[count]["position"]
-     # @employee[:start_date]=e[count]["start_date"]
-     # @employee[:end_date]=e[count]["end_date"]
-     # @employee.save
-    #end
     puts "Success. Added #{@count_positions} Positions, and #{@count_employees} Employees to Database."
     render nothing: true
   end
  
+  def user_insert_db
+    render "user_insert_db"
+  end
+  
+
+
 end
 
 

@@ -27,7 +27,13 @@ class CalcsController < ApplicationController
     render "chart"
   end
   def fields
-    sql = "select SUM(position between 1 and 4) as managers, SUM(position between 5 and 6) as developers, SUM(position between 7 and 9) as administration, SUM(position between 10 and 11) as finance, SUM(position between 12 and 14) as qa from employees join positions where employees.position = positions.id and end_date is null;"
+    sql = "select SUM(positions.desc LIKE 'C%O' OR positions.desc LIKE '%Manager') as managers, 
+       SUM(positions.desc LIKE '%Developer%') as developers, 
+	   SUM(positions.desc LIKE '%Secretary' OR positions.desc LIKE 'Maintenance man') as administration, 
+	   SUM(positions.desc LIKE '%Finance%') as finance, 
+	   SUM(positions.desc LIKE '%QA%') as qa 
+from positions join employees
+where employees.position = positions.id and end_date is null;"
     results = ActiveRecord::Base.connection.execute(sql)
     gon.data = results.first
     render "fields"
@@ -35,16 +41,5 @@ class CalcsController < ApplicationController
 
 end 
 
-
-
-# this goes into the data hash of Salary series of the chart... good luck with that :/
-=begin
-
-for i in Date.new(2012,02,01)..Date.today do
-  @a=Calc.new(i)
-  @a.current
-end
-
-=end
 
   
