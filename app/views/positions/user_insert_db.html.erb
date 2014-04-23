@@ -1,11 +1,12 @@
 <h1> here will come the user interface to choose a file to add data from to the db. </h1>
 <%#
+
 <input type="text" class="form-control" placeholder="File will be here" style="width:10%"></br>
 <button id="file" class="btn btn-default">Browse for file</button>
-%>
 
 <input type="button" id="get_file" value="Grab file">
 <input type="file" id="my_file">
+<input type="button" id="upload" value="Upload">
 <div id="customfileupload">Select a file</div>
 
 </br></br></br>
@@ -16,9 +17,20 @@
 </div>
 
 
+<input type="file" id="file" />
+<br />
+<input type="button" value="Upload data" id="upload" />
 
+%>
 
-
+<header>
+  <h1>File API - FileReader (Json)</h1>
+</header>
+<article>
+  <label for="files">Select a file: </label>
+  <input id="files" type="file" />
+  <output id="result" />
+</article>
 
 <%= stylesheet_link_tag "/user_insert_db" %>
 <%= javascript_include_tag "/user_insert_db" %>

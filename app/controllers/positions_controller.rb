@@ -19,32 +19,36 @@ class PositionsController < ApplicationController
 
 
   def insert_site_db
-    @p=params[:positions]
-    @e=params[:employees]
+    @p=params[:positions] if params[:positions]
+    @e=params[:employees] if params[:employees]
     @count_positions,@count_employees=0,0
-    @p.each do |p|
-      unless Position.all.exists?(desc: "#{p[:desc]}") then
-        @position=Position.new
-        @position[:desc]=p[:desc]
-        @position[:salary]=p[:salary]
-        @position.save
-        @count_positions+=1
+    if @p then
+      @p.each do |p|
+        unless Position.all.exists?(desc: "#{p[:desc]}") then
+          @position=Position.new
+          @position[:desc]=p[:desc]
+          @position[:salary]=p[:salary]
+          @position.save
+          @count_positions+=1
+        end
       end
     end
-    @e.each do |e|
-      unless Employee.all.exists?(name: "#{e[:name]}") then
-        @employee=Employee.new
-        @employee[:name]=e[:name]
-        position_id=Position.find_by_desc("#{e[:position]}")
-        @employee[:position]=position_id[:id]
-        @employee[:start_date]=e[:start_date]
-        @employee[:end_date]=e[:end_date]
-        @employee.save
-        @count_employees+=1
+    if @e then
+      @e.each do |e|
+        unless Employee.all.exists?(name: "#{e[:name]}") then
+          @employee=Employee.new
+          @employee[:name]=e[:name]
+          position_id=Position.find_by_desc("#{e[:position]}")
+          @employee[:position]=position_id[:id]
+          @employee[:start_date]=e[:start_date]
+          @employee[:end_date]=e[:end_date]
+          @employee.save
+          @count_employees+=1
+        end
       end
     end
     puts "Success. Added #{@count_positions} Positions, and #{@count_employees} Employees to Database."
-    render nothing: true
+    render text: "Success. Added #{@count_positions} Positions, and #{@count_employees} Employees to Database."
   end
  
   def user_insert_db
