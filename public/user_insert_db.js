@@ -46,9 +46,11 @@ window.onload = function() {
                       //Upload progress
                       xhr.upload.addEventListener("progress", function(evt){
                         if (evt.lengthComputable) {
+                          var percent = evt.loaded / evt.total * 100;
+                          var width2 = percent + ' %';
                           $('#bar').css({
                             display: 'block',
-                            width: /*"(evt.loaded / evt.total * 100 )"*/ "100%"
+                            width: percent * 4.7
                           });
                           /*$("#bar").style.display = 'block';
                           $("#bar").text(evt.loaded / evt.total * 100 + ' %');
