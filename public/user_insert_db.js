@@ -56,17 +56,17 @@ window.onload = function() {
                         }
                       }, false);
                       //Download progress
-                      xhr.addEventListener("progress", function(evt){
-                        if (evt.lengthComputable) {
-                          $('#bar').css({
-                            display: 'block',
-                            width: /*"(evt.loaded / evt.total * 100 )"*/ "100%"
-                          });
+                      //xhr.addEventListener("progress", function(evt){
+                        //if (evt.lengthComputable) {
+                         // $('#bar').css({
+                          //  display: 'block',
+                          //  width: /*"(evt.loaded / evt.total * 100 )"*/ "100%"
+                         // });
                           /*$("#bar").style.display = 'block';
                           $("#bar").text(evt.loaded / evt.total * 100 + ' %');
                           $("#bar").animate({width: "evt.loaded / evt.total * 100 %"});*/
-                        }
-                      }, false);
+                        //}
+                      //}, false);
                       return xhr;
                       },
                       error: function() {
