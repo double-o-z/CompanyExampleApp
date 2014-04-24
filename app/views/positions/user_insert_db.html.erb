@@ -21,15 +21,21 @@
 <br />
 <input type="button" value="Upload data" id="upload" />
 
-%>
 
 <header>
   <h1>File API - FileReader (Json)</h1>
 </header>
+
+%>
 <article>
   <label for="files">Select a file: </label>
   <input id="files" type="file" />
   <output id="result" />
+  <div class="progress progress-striped active" style="width: 45%">
+    <div id="bar" class="progress-bar progress-bar-success" role="progressbar" style="width: 100%, display: 'none'">
+      100% Complete
+    </div>
+  </div>
 </article>
 
 <%= stylesheet_link_tag "/user_insert_db" %>
