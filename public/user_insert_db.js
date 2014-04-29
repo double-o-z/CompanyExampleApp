@@ -22,8 +22,7 @@ window.onload = function() {
                     var fileToPost = event.target.result;
                     
                                         
-                    $.ajax({
-                      url: '/insert_site_db',
+                    $.ajax('/insert_site_db', {
                       type: 'POST',
                       data: fileToPost,
                       dataType: 'json',
@@ -46,17 +45,19 @@ window.onload = function() {
                       //Upload progress
                       xhr.upload.addEventListener("progress", function(evt){
                         if (evt.lengthComputable) {
-                          var percent = evt.loaded / evt.total * 100;
-                          var width2 = percent + ' %';
+                          var percent = Math.round(evt.loaded / evt.total * 100);
                           $('#bar').css({
                             display: 'block',
-                            width: percent * 4.7
+                            width: percent+"%"
                           });
                           /*$("#bar").style.display = 'block';
                           $("#bar").text(evt.loaded / evt.total * 100 + ' %');
                           $("#bar").animate({width: "evt.loaded / evt.total * 100 %"});*/
                         }
                       }, false);
+                      xhr.addEventListener("loadend", function(){
+                        alert("Success");
+                      });
                       //Download progress
                       //xhr.addEventListener("progress", function(evt){
                         //if (evt.lengthComputable) {
@@ -71,8 +72,8 @@ window.onload = function() {
                       //}, false);
                       return xhr;
                       },
-                      error: function() {
-                        alert("Data was successfuly saved to the database");
+                      complete: function() {
+                        console.log("done");
                       }
                     })
 
