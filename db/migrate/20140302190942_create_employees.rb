@@ -3,7 +3,8 @@ class CreateEmployees < ActiveRecord::Migration
     create_table :employees do |t|
       t.string :name
       t.integer :position
-      t.integer :months
+      t.date :start_date
+      t.date :end_date
 
     end
   end

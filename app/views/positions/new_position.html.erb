@@ -1,0 +1,12 @@
+<h1> Position </h1><br/>
+<h3>Enter new position information below</h3><br/><br/>
+
+<%= form_tag('/positions/insert') do -%>
+  <%= text_field_tag 'desc', '', options={placeholder: "Description of position"} %><br/><br/>
+  <%= text_field_tag 'salary', '', options={placeholder: "Salary"} %><br/><br/>
+  <%= submit_tag 'Add' %>
+<% end -%>
+
+
+ 
+

@@ -16,7 +16,8 @@ ActiveRecord::Schema.define(version: 20140302191014) do
   create_table "employees", force: true do |t|
     t.string  "name"
     t.integer "position"
-    t.integer "months"
+    t.time "start_date"
+    t.time "end_date"
   end
 
   create_table "positions", force: true do |t|

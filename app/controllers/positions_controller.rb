@@ -1,15 +1,22 @@
 class PositionsController < ApplicationController
 
   def list
-    render text: Position.all.to_yaml #shows all positions in yaml format.
+    render "list"
+  end
+
+  def new_position  
+    render "new_position"
   end
 
   def insert
-	render text: "New Row added." 
-	@position=Position.new
-	@position[:desc]=params[:desc]
-	@position[:salary]=params[:salary]
-	@position.save
+    @position=Position.new
+    @position[:desc]=params[:desc]
+    @position[:salary]=params[:salary]
+    @position.save
+    redirect_to action: "new_position"
   end
+
+
 end
+
 

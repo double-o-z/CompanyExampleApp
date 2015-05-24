@@ -1,0 +1,17 @@
+class CalcsController < ApplicationController
+  
+require 'time_diff'
+
+  def month
+    @join=0
+    @join=Employee.joins("INNER JOIN positions ON positions.id = employees.position").select(:salary).where(end_date: nil).sum {|p| p[:salary]}
+  end
+
+  def total
+    @sum1,@sum2,@sum3=0.0,0.0,0.0
+    @sum1=Employee.joins("INNER JOIN positions ON positions.id = employees.position").select(:salary, :start_date).where(end_date: nil).sum {|p| Time.diff(Time.parse(p[:start_date].to_date), Time.now)[:month] * p[:salary]}
+    @sum2=Employee.joins("INNER JOIN positions ON positions.id = employees.position").select(:salary, :start_date, :end_date).where(end_date: true).sum {|s| Time.diff(Time.parse(s[:start_date].to_date), Time.parse(s[:end_date].to_date)[:month] * s[:salary]}
+    @sum3=@sum1+@sum2
+    
+  end
+end 

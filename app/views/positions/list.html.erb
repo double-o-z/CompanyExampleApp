@@ -1,0 +1,19 @@
+<h1>Listing Positions</h1>
+<% @positions=Position.all %>
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Description</th>
+    <th>Salary</th> 
+  </tr>
+
+<% @positions.each do |p| %>
+  <tr>
+    <td><%= p[:id] %></td>
+    <td><%= p[:desc] %></td>
+    <td><%= p[:salary] %></td>
+  </tr>
+<% end %>
+</table>
+  
+

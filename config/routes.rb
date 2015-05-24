@@ -1,13 +1,23 @@
 Company::Application.routes.draw do
 
 
-get '/employees' => 'employees#insert'
-get '/positions' => 'positions#insert'
+get '/employees/new_employee' => 'employees#new_employee'
+post '/employees/new_employee' => 'employees#new_employee'
+get '/employees/insert' => 'employees#insert'
+post '/employees/insert' => 'employees#insert'
+
+get '/positions/new_position' => 'positions#new_position'
+post '/positions/new_position' => 'positions#new_position'
+get '/positions/insert' => 'positions#insert'
+post '/positions/insert' => 'positions#insert'
 
 get '/employees/list' => 'employees#list'
 get '/positions/list' => 'positions#list'
 
-get '/calcs' => 'calcs#list'
+get '/employees/fire' => 'employees#fire'
+
+get '/calcs/total' => 'calcs#total'
+get '/calcs/month' => 'calcs#month'
 
 
 

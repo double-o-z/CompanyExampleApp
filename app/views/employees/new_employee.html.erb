@@ -1,0 +1,12 @@
+<h1> Employee </h1><br/>
+<h3>Enter new employee information below</h3><br/><br/>
+
+<% @position=Position.all %>
+<%= form_tag('/employees/insert') do -%>
+  <%= text_field_tag 'name', '', options={placeholder: "Name of employee"} %><br/><br/>
+  <%= select_tag "position", options_from_collection_for_select(@position, "id", "desc") %><br/><br/>
+  <%= submit_tag 'Add' %>
+<% end -%>
+
+
+ 

@@ -1,0 +1,25 @@
+<h1>Listing Employees</h1>
+<% @employees=Employee.all %>
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Position</th>
+    <th>Start Date</th>
+    <th>Action</th> 
+  </tr>
+
+<% @employees.each do |e| %>
+  <tr>
+  <% if e[:end_date] == nil %>
+  <% @e=e[:id] %>
+    <td><%= e[:id] %></td>
+    <td><%= e[:name] %></td>
+    <td><%= e[:position] %></td>
+    <td><%= e[:start_date] %></td>
+    <td><%= link_to "Fire", controller: "employees", action: "fire", id: e[:id] %>
+  <% end %>
+  </tr>
+<% end %>
+</table>
+  
